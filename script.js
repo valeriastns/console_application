@@ -1,8 +1,16 @@
-let numbersOfFilm = prompt('How many movies have you ever watched?');
+let numberOfFilms;
 
+function start() {
+    numberOfFilms = +prompt('How many movies have you ever watched?');
+
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('How many movies have you ever watched?');
+    }
+}
+start();
 
 let personalMovieDB = {
-    'count': numbersOfFilm,
+    'count': numberOfFilms,
     'movies': {},
     'actors': {},
     'genres': [],
